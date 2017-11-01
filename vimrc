@@ -3,6 +3,7 @@ set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab  shiftround smarttab
 set showmatch
+set hidden
 set hlsearch incsearch
 set undolevels=1000
 set autochdir
@@ -43,6 +44,7 @@ nnoremap <leader>v <c-v>
 nnoremap <leader>m :silent make<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>b :b <c-d>
+nnoremap <leader>f :e <c-d>
 nnoremap <tab> <c-w>w
 nnoremap * *N
 nnoremap g* g*N
