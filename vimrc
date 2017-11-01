@@ -1,4 +1,4 @@
-set relativenumber
+set number
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab  shiftround smarttab
@@ -6,7 +6,7 @@ set showmatch
 set hlsearch incsearch
 set undolevels=1000
 set autochdir
-set wildignorecase wildmenu
+set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set laststatus=2
 set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
@@ -14,7 +14,7 @@ set errorformat=%f:%l:%m
 set mouse=a
 set background=dark
 set guioptions=
-set guifont=Monaco:h14
+set guifont=Monaco:h12
 set t_Co=256
 colorscheme hybrid
 filetype indent plugin on
@@ -51,6 +51,8 @@ vnoremap <silent> * :<C-U>
     \gvy/<C-R><C-R>=substitute(
     \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 " -============-
 " |  Snippets  |
