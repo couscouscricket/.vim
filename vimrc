@@ -1,5 +1,5 @@
 set relativenumber
-set shortmess
+set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab  shiftround smarttab
 set showmatch
@@ -17,7 +17,7 @@ set guioptions=
 set guifont=Monaco:h14
 set t_Co=256
 colorscheme hybrid
-filetype indent plugin on " turn on omni-completion
+filetype indent plugin on
 syntax on
 
 augroup cursorhi
