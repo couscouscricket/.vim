@@ -15,7 +15,7 @@ set errorformat=%f:%l:%m
 set mouse=a
 set background=dark
 set guioptions=
-set guifont=Monaco:h12
+set guifont=Menlo:h10
 set t_Co=256
 colorscheme hybrid
 filetype indent plugin on
