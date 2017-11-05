@@ -15,7 +15,7 @@ set errorformat=%f:%l:%m
 set mouse=a
 set background=dark
 set guioptions=
-set guifont=Menlo:h12
+set guifont=Menlo:h11
 set t_Co=256
 colorscheme hybrid
 filetype indent plugin on
@@ -29,9 +29,8 @@ augroup END
 
 augroup autocompile
     autocmd!
-    autocmd FileType gp set makeprg=gnuplot\ %
-    autocmd FileType c set makeprg=gcc\ %
-    autocmd QuickFixCmdPost * copen
+    autocmd FileType gp nnoremap <leader>m :w<cr>:silent !gnuplot %<cr>
+    autocmd FileType c nnoremap <leader>m :w<cr>:silent !gcc<cr>:!./a.out<cr>
 augroup END
 
 " -=====================-
@@ -41,10 +40,11 @@ let mapleader = " "
 imap jj <esc>
 imap kk <esc>
 nnoremap <leader>v <c-v>
-nnoremap <leader>m :silent make<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>b :b <c-d>
 nnoremap <leader>f :e <c-d>
+nnoremap <c-j> <c-d>
+nnoremap <c-k> <c-u>
 nnoremap <tab> <c-w>w
 nnoremap * *N
 nnoremap g* g*N
