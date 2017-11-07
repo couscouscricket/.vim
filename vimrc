@@ -29,8 +29,8 @@ augroup END
 
 augroup autocompile
     autocmd!
-    autocmd FileType gp nnoremap <leader>m :w<cr>:silent !gnuplot %<cr>
-    autocmd FileType c nnoremap <leader>m :w<cr>:silent !gcc<cr>:!./a.out<cr>
+    autocmd FileType gp nnoremap <leader>m :w<cr>:!gnuplot %<cr>
+    autocmd FileType c nnoremap <leader>m :w<cr>:!gcc %<cr>
 augroup END
 
 " -=====================-
@@ -42,7 +42,9 @@ imap kk <esc>
 nnoremap <leader>v <c-v>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>b :b <c-d>
-nnoremap <leader>f :e <c-d>
+nnoremap <leader>f :e <c-d>*
+nnoremap <c-l> :bnext<cr>
+nnoremap <c-h> :bprevious<cr>
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 nnoremap <tab> <c-w>w
