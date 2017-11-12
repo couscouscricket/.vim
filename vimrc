@@ -1,7 +1,7 @@
 set number
 set shortmess=a
 set clipboard^=unnamed
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab  shiftround smarttab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hidden
 set hlsearch incsearch
@@ -9,9 +9,11 @@ set undolevels=1000
 set autochdir
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
+set autoindent
+set nowrap
+set gdefault
 set laststatus=2
 set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
-set errorformat=%f:%l:%m
 set mouse=a
 set background=dark
 set guioptions=
@@ -40,21 +42,20 @@ let mapleader = " "
 imap jj <esc>
 imap kk <esc>
 nnoremap <leader>v <c-v>
-nnoremap <leader>q :bd<cr>
-nnoremap <leader>b :b <c-d>
+nnoremap <leader>q :bd!<cr>
+nnoremap <leader>b :ls<cr>:b 
 nnoremap <leader>f :e <c-d>*
-nnoremap <c-l> :bnext<cr>
-nnoremap <c-h> :bprevious<cr>
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 nnoremap <tab> <c-w>w
 nnoremap * *N
 nnoremap g* g*N
 vnoremap <silent> * :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy/<C-R><C-R>=substitute(
-    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>N
+vmap <leader>s *:%s//
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
