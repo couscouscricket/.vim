@@ -1,4 +1,5 @@
 set number
+set autowriteall
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
@@ -10,7 +11,6 @@ set autochdir
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
-set nowrap
 set gdefault
 set laststatus=2
 set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
@@ -19,9 +19,16 @@ set background=dark
 set guioptions=
 set guifont=Menlo:h11
 set t_Co=256
-colorscheme hybrid
+colorscheme solarized
 filetype indent plugin on
 syntax on
+
+let g:netrw_liststyle=3
+
+augroup autosave
+    autocmd!
+    autocmd FocusLost * :wa
+augroup END
 
 augroup cursorhi
     autocmd!
@@ -41,6 +48,7 @@ augroup END
 let mapleader = " "
 imap jj <esc>
 imap kk <esc>
+nnoremap <CR> G
 nnoremap <leader>v <c-v>
 nnoremap <leader>q :bd!<cr>
 nnoremap <leader>b :ls<cr>:b 
