@@ -1,5 +1,4 @@
 set number
-set autowriteall
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
@@ -13,22 +12,17 @@ set backspace=indent,eol,start
 set autoindent
 set gdefault
 set laststatus=2
-set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
+set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
 set mouse=a
 set background=dark
 set guioptions=
 set guifont=Menlo:h11
 set t_Co=256
-colorscheme solarized
-filetype indent plugin on
+colorscheme hybrid
+filetype plugin indent on
 syntax on
 
 let g:netrw_liststyle=3
-
-augroup autosave
-    autocmd!
-    autocmd FocusLost * :wa
-augroup END
 
 augroup cursorhi
     autocmd!
@@ -46,16 +40,22 @@ augroup END
 " |  Keyboard mappings  |
 " -=====================-
 let mapleader = " "
+
+nnoremap <leader>a :argadd <c-d>*
+nnoremap <leader>b :ls<cr>:b 
+nnoremap <leader>e :e <c-d>*
+nnoremap <leader>q :b#<cr>
+inoremap <silent> ,f <c-x><c-f>
+inoremap <silent> ,l <c-x><c-l>
+
 imap jj <esc>
 imap kk <esc>
 nnoremap <CR> G
 nnoremap <leader>v <c-v>
-nnoremap <leader>q :bd!<cr>
-nnoremap <leader>b :ls<cr>:b 
-nnoremap <leader>f :e <c-d>*
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 nnoremap <tab> <c-w>w
+
 nnoremap * *N
 nnoremap g* g*N
 vnoremap <silent> * :<C-U>
@@ -64,6 +64,7 @@ vnoremap <silent> * :<C-U>
   \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>N
 vmap <leader>s *:%s//
+
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
