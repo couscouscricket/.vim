@@ -18,6 +18,7 @@ set background=dark
 set guioptions=
 set guifont=Menlo:h11
 set t_Co=256
+set autoread
 colorscheme hybrid
 filetype plugin indent on
 syntax on
@@ -56,13 +57,13 @@ nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 nnoremap <tab> <c-w>w
 
-nnoremap * *N
-nnoremap g* g*N
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy/<C-R><C-R>=substitute(
   \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>N
+nnoremap * *N
+nnoremap g* g*N
 vmap <leader>s *:%s//
 
 map <ScrollWheelUp> <C-Y>
