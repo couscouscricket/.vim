@@ -66,12 +66,4 @@ nnoremap * *N
 nnoremap g* g*N
 vmap <leader>s *:%s//
 
-map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
-
-" -============-
-" |  Snippets  |
-" -============-
-nnoremap ,html :-1read ~/.vim/skeleton/html<CR>3jf*s
-autocmd FileType c nnoremap ,main :-1read ~/.vim/skeleton/c_main<CR>jf*s
-autocmd FileType c nnoremap ,printf :-1read ~/.vim/skeleton/printf<CR>f*s
