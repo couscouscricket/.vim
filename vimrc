@@ -65,5 +65,3 @@ vnoremap <silent> * :<C-U>
 nnoremap * *N
 nnoremap g* g*N
 vmap <leader>s *:%s//
-
-map <ScrollWheelDown> <C-E>
