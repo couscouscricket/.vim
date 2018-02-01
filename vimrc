@@ -48,6 +48,7 @@ nnoremap <leader>e :e <c-d>*
 nnoremap <leader>q :b#<cr>
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
+inoremap <silent> ,p <c-x><c-p>
 
 imap jj <esc>
 imap kk <esc>
