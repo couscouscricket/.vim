@@ -31,12 +31,6 @@ augroup cursorhi
     autocmd InsertLeave * set nocul
 augroup END
 
-augroup autocompile
-    autocmd!
-    autocmd FileType gp nnoremap <leader>m :w<cr>:!gnuplot %<cr>
-    autocmd FileType c nnoremap <leader>m :w<cr>:!gcc %<cr>
-augroup END
-
 " -=====================-
 " |  Keyboard mappings  |
 " -=====================-
@@ -53,9 +47,7 @@ inoremap <silent> ,p <c-x><c-p>
 imap jj <esc>
 imap kk <esc>
 nnoremap <CR> G
-nnoremap <leader>v <c-v>
-nnoremap <c-j> <c-d>
-nnoremap <c-k> <c-u>
+vnoremap <CR> G
 nnoremap <tab> <c-w>w
 
 vnoremap <silent> * :<C-U>
@@ -65,4 +57,4 @@ vnoremap <silent> * :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>N
 nnoremap * *N
 nnoremap g* g*N
-vmap <leader>s *:%s//
+vmap <leader>r *:%s//
