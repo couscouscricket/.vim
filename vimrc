@@ -37,10 +37,8 @@ augroup END
 let mapleader = " "
 
 nnoremap <leader>a :argadd <c-d>*
-nnoremap <leader>b :ls<cr>:b 
 nnoremap <leader>e :e <c-d>*
-nnoremap <leader>q :b#<cr>
-nnoremap <leader>s :ls<cr>:vert belowright sb 
+nnoremap <leader>b :ls<cr>:b 
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
 inoremap <silent> ,p <c-x><c-p>
