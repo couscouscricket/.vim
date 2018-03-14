@@ -47,9 +47,11 @@ inoremap <silent> ,p <c-x><c-p>
 
 imap jj <esc>
 imap kk <esc>
-nnoremap <CR> G
-vnoremap <CR> G
+nnoremap <cr> G
+vnoremap <cr> G
 nnoremap <tab> <c-w>w
+nnoremap <c-n> :bnext<cr>
+nnoremap <c-p> :bprevious<cr>
 
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
