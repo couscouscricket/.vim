@@ -37,7 +37,7 @@ augroup END
 let mapleader = " "
 
 nnoremap <leader>a :argadd <c-d>*
-nnoremap <leader>e :e <c-d>*
+nnoremap <leader>e :Explore
 nnoremap <leader>b :ls<cr>:b 
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
@@ -45,11 +45,7 @@ inoremap <silent> ,p <c-x><c-p>
 
 imap jj <esc>
 imap kk <esc>
-nnoremap <cr> G
-vnoremap <cr> G
 nnoremap <tab> <c-w>w
-nnoremap <c-n> :bnext<cr>
-nnoremap <c-p> :bprevious<cr>
 
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
