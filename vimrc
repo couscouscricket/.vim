@@ -16,7 +16,7 @@ set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %
 set mouse=a
 set background=dark
 set guioptions=
-set guifont=Menlo:h11
+set guifont=Menlo:h14
 set t_Co=256
 set autoread
 colorscheme hybrid
