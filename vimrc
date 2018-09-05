@@ -15,6 +15,7 @@ colorscheme hybrid
 syntax on
 
 set number
+set relativenumber
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
