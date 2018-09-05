@@ -41,7 +41,7 @@ nnoremap <leader>e :Explore<cr>
 nnoremap <leader>b :ls<cr>:b 
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
-inoremap <silent> ,p <c-x><c-p>
+inoremap <silent> ,w <c-x><c-p>
 
 imap jj <esc>
 imap kk <esc>
