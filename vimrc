@@ -24,6 +24,9 @@ filetype plugin indent on
 syntax on
 
 let g:netrw_liststyle=3
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
 
 augroup cursorhi
     autocmd!
