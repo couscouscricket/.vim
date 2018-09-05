@@ -1,3 +1,19 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+call vundle#end()
+
+let g:UltiSnipsExpandTrigger="<tab>"
+
+filetype plugin indent on
+colorscheme hybrid
+syntax on
+
 set number
 set shortmess=a
 set clipboard^=unnamed
@@ -10,18 +26,16 @@ set autochdir
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
-set gdefault
 set laststatus=2
 set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
 set mouse=a
 set background=dark
+set autoread
+set autowrite
+
 set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
-set autoread
-colorscheme hybrid
-filetype plugin indent on
-syntax on
 
 let g:netrw_liststyle=3
 let &t_SI.="\e[5 q"
@@ -42,13 +56,12 @@ let mapleader = " "
 nnoremap <leader>a :argadd <c-d>
 nnoremap <leader>e :Explore<cr>
 nnoremap <leader>b :ls<cr>:b 
+nnoremap <leader>w <c-w>w
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
 inoremap <silent> ,w <c-x><c-p>
-
 imap jj <esc>
 imap kk <esc>
-nnoremap <tab> <c-w>w
 
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
