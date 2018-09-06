@@ -39,6 +39,7 @@ set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
 
+let g:netrw_dirhistmax=0
 let g:netrw_liststyle=3
 let g:netrw_list_hide='.*\.swp$,\.DS_Store'
 let g:netrw_sort_sequence='[\/]$'
