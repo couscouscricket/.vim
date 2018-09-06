@@ -12,10 +12,12 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 filetype plugin indent on
 colorscheme hybrid
+set background=dark
 syntax on
 
 set number
 set relativenumber
+set cursorline
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
@@ -30,7 +32,6 @@ set autoindent
 set laststatus=2
 set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
 set mouse=a
-set background=dark
 set autoread
 set autowrite
 
@@ -39,15 +40,25 @@ set guifont=Menlo:h14
 set t_Co=256
 
 let g:netrw_liststyle=3
+let g:netrw_list_hide='.*\.swp$,\.DS_Store'
+let g:netrw_sort_sequence='[\/]$'
+let g:netrw_sort_options='i'
+let g:netrw_altv=1
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_winsize=25
+let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
+
+
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
 
-augroup cursorhi
-    autocmd!
-    autocmd InsertEnter * set cul
-    autocmd InsertLeave * set nocul
-augroup END
+"augroup cursorhi
+"    autocmd!
+"    autocmd InsertEnter * set cul
+"    autocmd InsertLeave * set nocul
+"augroup END
 
 " -=====================-
 " |  Keyboard mappings  |
@@ -55,7 +66,7 @@ augroup END
 let mapleader = " "
 
 nnoremap <leader>a :argadd <c-d>
-nnoremap <leader>e :Explore<cr>
+nnoremap <leader>e :Lexplore<cr>
 nnoremap <leader>b :ls<cr>:b 
 nnoremap <leader>w <c-w>w
 inoremap <silent> ,f <c-x><c-f>
