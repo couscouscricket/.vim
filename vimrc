@@ -32,6 +32,7 @@ set laststatus=2
 set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
 set autoread
 set autowrite
+set mouse=""
 set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
