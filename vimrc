@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -24,7 +25,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
 set undolevels=1000
-set autochdir
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
@@ -32,29 +32,22 @@ set laststatus=2
 set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
 set autoread
 set autowrite
-set mouse=""
+
+set mouse=a
 set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
 
-let g:netrw_liststyle=3 " Tree like view
 let g:netrw_dirhistmax=0
-let g:netrw_list_hide='.*\.swp$,\.DS_Store'
 let g:netrw_sort_sequence='[\/]$'
 let g:netrw_sort_options='i'
 let g:netrw_banner=0
 let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
 
-
+"" Line cursor when in insert mode.
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
-
-"augroup cursorhi
-"    autocmd!
-"    autocmd InsertEnter * set cul
-"    autocmd InsertLeave * set nocul
-"augroup END
 
 " -=====================-
 " |  Keyboard mappings  |
@@ -62,6 +55,7 @@ let &t_EI.="\e[1 q"
 let mapleader = " "
 
 nnoremap <leader>e :Explore!<cr>
+nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>b :ls<cr>:b 
 nnoremap <leader>w <c-w>w
 inoremap <silent> ,f <c-x><c-f>
