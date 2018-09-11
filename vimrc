@@ -43,6 +43,8 @@ let g:netrw_sort_sequence='[\/]$'
 let g:netrw_sort_options='i'
 let g:netrw_banner=0
 let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
+let g:ctrlp_map = '<leader>f'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 "" Line cursor when in insert mode.
 let &t_SI.="\e[5 q"
@@ -55,12 +57,10 @@ let &t_EI.="\e[1 q"
 let mapleader = " "
 
 nnoremap <leader>s :write<cr>
-nnoremap <leader>v <c-v>
 nnoremap <leader>e :Explore!<cr>
 nnoremap <leader>E :Vexplore!<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>b :buffers<cr>:b 
-nnoremap <leader>w <c-w>w
 nnoremap <leader>r :b#<cr>
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
