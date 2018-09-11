@@ -43,8 +43,14 @@ let g:netrw_sort_sequence='[\/]$'
 let g:netrw_sort_options='i'
 let g:netrw_banner=0
 let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
+
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 
 "" Line cursor when in insert mode.
 let &t_SI.="\e[5 q"
@@ -62,9 +68,12 @@ nnoremap <leader>E :Vexplore!<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>b :buffers<cr>:b 
 nnoremap <leader>r :b#<cr>
-inoremap <silent> ,f <c-x><c-f>
-inoremap <silent> ,l <c-x><c-l>
-inoremap <silent> ,w <c-x><c-p>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 imap jj <esc>
 imap kk <esc>
 
