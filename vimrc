@@ -54,10 +54,14 @@ let &t_EI.="\e[1 q"
 " -=====================-
 let mapleader = " "
 
+nnoremap <leader>s :write<cr>
+nnoremap <leader>v <c-v>
 nnoremap <leader>e :Explore!<cr>
+nnoremap <leader>E :Vexplore!<cr>
 nnoremap <leader>f :CtrlP<cr>
-nnoremap <leader>b :ls<cr>:b 
+nnoremap <leader>b :buffers<cr>:b 
 nnoremap <leader>w <c-w>w
+nnoremap <leader>r :b#<cr>
 inoremap <silent> ,f <c-x><c-f>
 inoremap <silent> ,l <c-x><c-l>
 inoremap <silent> ,w <c-x><c-p>
