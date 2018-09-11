@@ -67,7 +67,7 @@ nnoremap <leader>e :Explore!<cr>
 nnoremap <leader>E :Vexplore!<cr>
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>b :buffers<cr>:b 
-nnoremap <leader>r :b#<cr>
+nnoremap <leader>a :b#<cr>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
