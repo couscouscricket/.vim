@@ -35,7 +35,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autoread
 set autowrite
 
-set mouse=a
+set mouse=""
 set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
@@ -47,8 +47,7 @@ let g:netrw_banner=0
 let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
 
 let g:ctrlp_map = '<leader>f'
-let g:ctrlp_cmd = 'CtrlPMixed'
-
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -68,8 +67,7 @@ let mapleader = " "
 nnoremap <leader>s :write<cr>
 nnoremap <leader>e :Explore!<cr>
 nnoremap <leader>E :Vexplore!<cr>
-nnoremap <leader>f :CtrlP<cr>
-nnoremap <leader>b :buffers<cr>:b 
+nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>a :b#<cr>
 
 nnoremap <c-j> <c-w>j
