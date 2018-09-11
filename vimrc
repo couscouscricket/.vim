@@ -19,6 +19,7 @@ syntax on
 set number
 set relativenumber
 set cursorline
+set ignorecase
 set shortmess=a
 set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
@@ -30,6 +31,7 @@ set backspace=indent,eol,start
 set autoindent
 set laststatus=2
 set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autoread
 set autowrite
 
@@ -46,6 +48,7 @@ let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
 
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlPMixed'
+
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
