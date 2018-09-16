@@ -30,7 +30,8 @@ set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
 set laststatus=2
-set statusline=\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ 
+set statusline=\ %<%F\ \ [%M%R%H%W%Y][%{&ff}]\ %=\ [%l/%L,%v][%p%%]
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autoread
 set autowrite
