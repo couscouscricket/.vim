@@ -1,13 +1,14 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'ctrlpvim/ctrlp.vim'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 
@@ -36,7 +37,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autoread
 set autowrite
 
-set mouse=""
+set mouse=a
 set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
