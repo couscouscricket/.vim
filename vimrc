@@ -8,11 +8,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'julialang/julia-vim'
+Plug 'w0ng/vim-hybrid'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 
 filetype plugin indent on
+let g:hybrid_custom_term_colors = 1
 colorscheme hybrid
 set background=dark
 syntax on
