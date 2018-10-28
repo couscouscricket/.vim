@@ -15,10 +15,10 @@ call plug#end()
 let g:UltiSnipsExpandTrigger="<tab>"
 
 filetype plugin indent on
+syntax on
 let g:hybrid_custom_term_colors = 1
 colorscheme hybrid
 set background=dark
-syntax on
 
 set number
 set relativenumber
@@ -46,20 +46,9 @@ set guioptions=
 set guifont=Menlo:h14
 set t_Co=256
 
-let g:netrw_dirhistmax=0
-let g:netrw_sort_sequence='[\/]$'
-let g:netrw_sort_options='i'
-let g:netrw_banner=0
-let g:netrw_bufsettings='noma nomod nu nobl nowrap ro rnu'
-
-let g:ctrlp_map = '<leader>f'
-let g:ctrlp_cmd = 'CtrlP'
-
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-let g:NERDTreeChDirMode=2
 
 "" Line cursor when in insert mode.
 let &t_SI.="\e[5 q"
@@ -71,21 +60,14 @@ let &t_EI.="\e[1 q"
 " -=====================-
 let mapleader = " "
 
-nnoremap <leader>e :NERDTreeFind<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>s :write<cr>
-"nnoremap <leader>e :Explore!<cr>
-"nnoremap <leader>E :Vexplore!<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>a :b#<cr>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-imap jj <esc>
-imap kk <esc>
 
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
