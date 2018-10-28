@@ -5,9 +5,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'julialang/julia-vim'
 Plug 'w0ng/vim-hybrid'
 call plug#end()
@@ -37,6 +37,7 @@ set laststatus=2
 set statusline=\ %<%F\ \ [%M%R%H%W%Y][%{&ff}]\ %=\ [%l/%L,%v][%p%%]
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set autochdir
 set autoread
 set autowrite
 
@@ -58,6 +59,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+let g:NERDTreeChDirMode=2
 
 "" Line cursor when in insert mode.
 let &t_SI.="\e[5 q"
@@ -69,9 +71,11 @@ let &t_EI.="\e[1 q"
 " -=====================-
 let mapleader = " "
 
+nnoremap <leader>e :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>s :write<cr>
-nnoremap <leader>e :Explore!<cr>
-nnoremap <leader>E :Vexplore!<cr>
+"nnoremap <leader>e :Explore!<cr>
+"nnoremap <leader>E :Vexplore!<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>a :b#<cr>
 
