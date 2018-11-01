@@ -22,6 +22,7 @@ set background=dark
 
 set number
 set relativenumber
+set scrolloff=999
 set cursorline
 set ignorecase
 set shortmess=a
@@ -64,6 +65,10 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>a :b#<cr>
 
+nnoremap <c-u> 3k
+nnoremap <c-d> 3j
+vnoremap <c-u> 3k
+vnoremap <c-d> 3j
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
