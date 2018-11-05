@@ -9,15 +9,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'julialang/julia-vim'
-Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
 
-filetype plugin indent on
-syntax on
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+colorscheme gruvbox
 set background=dark
 
 set number
@@ -45,7 +42,6 @@ set autowrite
 set mouse=a
 set guioptions=
 set guifont=Menlo:h14
-set t_Co=256
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
