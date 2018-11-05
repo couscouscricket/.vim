@@ -48,9 +48,9 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "" Line cursor when in insert mode.
-let &t_SI.="\e[5 q"
-let &t_SR.="\e[4 q"
-let &t_EI.="\e[1 q"
+"let &t_SI.="\e[5 q"
+"let &t_SR.="\e[4 q"
+"let &t_EI.="\e[1 q"
 
 " -=====================-
 " |  Keyboard mappings  |
