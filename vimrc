@@ -12,7 +12,7 @@ Plug 'julialang/julia-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'jeetsukumaran/vim-buffergator'
+Plug 'troydm/easybuffer.vim'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -49,10 +49,8 @@ set guifont=Menlo:h14
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:buffergator_sort_regime="filepath"
-let g:buffergator_hsplit_size="10"
+let NERDTreeQuitOnOpen=1
 
-let g:buffergator_viewport_split_policy="B"
 "" Line cursor when in insert mode.
 "let &t_SI.="\e[5 q"
 "let &t_SR.="\e[4 q"
@@ -63,9 +61,9 @@ let g:buffergator_viewport_split_policy="B"
 " -=====================-
 let mapleader = " "
 
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>b :EasyBufferBotRight<cr>
 nnoremap <leader>s /
 
 nnoremap <c-u> 3k
