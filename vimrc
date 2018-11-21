@@ -10,6 +10,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'julialang/julia-vim'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'jeetsukumaran/vim-buffergator'
 call plug#end()
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -19,7 +22,7 @@ set background=dark
 
 set number
 set relativenumber
-set scrolloff=999
+set scrolloff=7
 set cursorline
 set ignorecase
 set shortmess=a
@@ -32,7 +35,7 @@ set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
 set laststatus=2
-set statusline=\ %<%F\ \ [%M%R%H%W%Y][%{&ff}]\ %=\ [%l/%L,%v][%p%%]
+"set statusline=\ %<%F\ \ [%M%R%H%W%Y][%{&ff}]\ %=\ [%l/%L,%v][%p%%]
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autochdir
@@ -46,7 +49,10 @@ set guifont=Menlo:h14
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:buffergator_sort_regime="filepath"
+let g:buffergator_hsplit_size="10"
 
+let g:buffergator_viewport_split_policy="B"
 "" Line cursor when in insert mode.
 "let &t_SI.="\e[5 q"
 "let &t_SR.="\e[4 q"
@@ -60,6 +66,7 @@ let mapleader = " "
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>s /
 
 nnoremap <c-u> 3k
 nnoremap <c-d> 3j
