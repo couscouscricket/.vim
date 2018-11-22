@@ -15,8 +15,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'troydm/easybuffer.vim'
 call plug#end()
 
-let g:UltiSnipsExpandTrigger="<tab>"
-
 colorscheme gruvbox
 set background=dark
 
