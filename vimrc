@@ -12,7 +12,6 @@ Plug 'julialang/julia-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'troydm/easybuffer.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -33,7 +32,6 @@ set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
 set laststatus=2
-"set statusline=\ %<%F\ \ [%M%R%H%W%Y][%{&ff}]\ %=\ [%l/%L,%v][%p%%]
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set autochdir
@@ -43,6 +41,10 @@ set autowrite
 set mouse=a
 set guioptions=
 set guifont=Menlo:h14
+
+let fortran_free_source=1
+let fortran_have_tabs=1
+let fortran_do_enddo=1
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -61,7 +63,7 @@ let mapleader = " "
 
 nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>b :EasyBufferBotRight<cr>
+nnoremap <leader>b :ls<cr>:b 
 nnoremap <leader>s /
 
 nnoremap <c-u> 3k
