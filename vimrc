@@ -4,11 +4,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if has("persistent_undo")
-    set undodir='~/.undodir/'
-    set undofile
-endif
-
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
@@ -23,6 +18,8 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
+set undofile
+set undodir=~/.vim/undodir
 set number
 set relativenumber
 set scrolloff=7
