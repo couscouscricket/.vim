@@ -4,6 +4,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
@@ -12,6 +17,7 @@ Plug 'julialang/julia-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'mbbill/undotree'
 call plug#end()
 
 colorscheme gruvbox
@@ -64,7 +70,7 @@ let mapleader = " "
 nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>b :ls<cr>:b 
-nnoremap <leader>s /
+nnoremap <leader>u :UndotreeToggle<cr>
 
 nnoremap <c-u> 3k
 nnoremap <c-d> 3j
