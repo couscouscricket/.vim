@@ -26,7 +26,7 @@ set scrolloff=7
 set cursorline
 set ignorecase
 set shortmess=a
-set clipboard^=unnamed
+set clipboard^=unnamedplus
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
@@ -43,7 +43,7 @@ set autowrite
 
 set mouse=a
 set guioptions=
-set guifont=Menlo:h14
+"set guifont=Menlo:h14
 
 let fortran_free_source=1
 let fortran_have_tabs=1
