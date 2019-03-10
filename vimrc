@@ -26,7 +26,7 @@ set scrolloff=7
 set cursorline
 set ignorecase
 set shortmess=a
-set clipboard^=unnamedplus
+set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
@@ -53,6 +53,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 
 "" Line cursor when in insert mode.
 "let &t_SI.="\e[5 q"
@@ -66,7 +68,7 @@ let mapleader = " "
 
 nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>b :ls<cr>:b 
+nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>u :UndotreeToggle<cr>
 
 nnoremap <c-u> 3k
