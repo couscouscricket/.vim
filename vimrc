@@ -74,6 +74,7 @@ nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>u :UndotreeToggle<cr>
+nnoremap <leader>s /
 
 nnoremap <c-u> 3k
 nnoremap <c-d> 3j
