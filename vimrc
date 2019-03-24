@@ -23,6 +23,7 @@ set undodir=~/.vim/undodir
 set number
 set encoding=utf8
 set relativenumber
+set foldmethod=syntax
 set scrolloff=7
 set cursorline
 set ignorecase
