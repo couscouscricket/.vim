@@ -32,6 +32,7 @@ set clipboard^=unnamed
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
+set gdefault
 set undolevels=1000
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
@@ -75,7 +76,7 @@ nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>b :ls<cr>:b<space>
 nnoremap <leader>u :UndotreeToggle<cr>
-nnoremap <leader>s /
+nnoremap <leader>s /\v
 
 nnoremap <c-u> 3k
 nnoremap <c-d> 3j
