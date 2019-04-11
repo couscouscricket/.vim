@@ -46,7 +46,7 @@ set autowrite
 
 set mouse=a
 set guioptions=
-set guifont=Menlo:h14
+set guifont=Menlo:h12
 
 let fortran_free_source=1
 let fortran_have_tabs=1
