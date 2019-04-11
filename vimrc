@@ -51,6 +51,7 @@ set guifont=Menlo:h12
 let fortran_free_source=1
 let fortran_have_tabs=1
 let fortran_do_enddo=1
+let g:xml_syntax_folding=1 
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -61,11 +62,6 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:terminal_ansi_colors = [
       \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
-
-"" Line cursor when in insert mode.
-"let &t_SI.="\e[5 q"
-"let &t_SR.="\e[4 q"
-"let &t_EI.="\e[1 q"
 
 " -=====================-
 " |  Keyboard mappings  |
@@ -86,6 +82,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap j gj
+nnoremap k gk
 
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
