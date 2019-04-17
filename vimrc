@@ -24,7 +24,7 @@ set number
 set encoding=utf8
 set relativenumber
 set foldmethod=syntax
-set scrolloff=7
+set scrolloff=1
 set cursorline
 set ignorecase
 set shortmess=a
@@ -33,7 +33,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
 set gdefault
-set undolevels=100
+set undolevels=20
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
@@ -51,7 +51,7 @@ set guifont=Menlo:h12
 let fortran_free_source=1
 let fortran_have_tabs=1
 let fortran_do_enddo=1
-let g:xml_syntax_folding=1 
+let g:xml_syntax_folding=1
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
