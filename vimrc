@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
+Plug 'jeetsukumaran/vim-buffergator'
 call plug#end()
 
 colorscheme gruvbox
@@ -64,15 +65,13 @@ let g:terminal_ansi_colors = [
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
 " -=====================-
-" |  Keyboard mappings  |
+"  | Keyboard mappings |
 " -=====================-
 let mapleader = " "
 
 nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>b :ls<cr>:b<space>
-nnoremap <leader>u :UndotreeToggle<cr>
-nnoremap <leader>s /\v
+nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 
 nnoremap <c-u> 3k
 nnoremap <c-d> 3j
