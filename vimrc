@@ -34,7 +34,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set showmatch
 set hlsearch incsearch
 set gdefault
-set undolevels=20
+set undolevels=100
 set wildignorecase wildmenu wildmode=longest:list,full
 set backspace=indent,eol,start
 set autoindent
@@ -73,10 +73,8 @@ nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 
-nnoremap <c-u> 3k
-nnoremap <c-d> 3j
-vnoremap <c-u> 3k
-vnoremap <c-d> 3j
+nnoremap <c-u> 10k
+nnoremap <c-d> 10j
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
