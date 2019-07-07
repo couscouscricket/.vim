@@ -66,7 +66,7 @@ let g:terminal_ansi_colors = [
 let mapleader = " "
 
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>e :cd %:p:h<cr>:Dirvish<cr>
+nnoremap <leader>e :Dirvish %:p:h<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
