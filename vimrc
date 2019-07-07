@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 colorscheme gruvbox
@@ -66,6 +66,8 @@ let g:terminal_ansi_colors = [
 let mapleader = " "
 
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>e :Explore<cr>
+nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
