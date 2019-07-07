@@ -41,7 +41,6 @@ set autoindent
 set laststatus=2
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-"set autochdir
 set autoread
 set autowrite
 
@@ -72,12 +71,14 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 
-nnoremap <c-u> <c-y>3
-nnoremap <c-d> <c-e>3
+nnoremap <c-u> 3<c-y>3gk
+nnoremap <c-d> 3<c-e>3gj
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap j gj
+nnoremap k gk
 
 nnoremap * *N
 nnoremap g* g*N
