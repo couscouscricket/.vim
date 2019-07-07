@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-vinegar'
+Plug 'justinmk/vim-dirvish'
 call plug#end()
 
 colorscheme gruvbox
@@ -41,7 +41,7 @@ set autoindent
 set laststatus=2
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set autochdir
+"set autochdir
 set autoread
 set autowrite
 
@@ -66,7 +66,7 @@ let g:terminal_ansi_colors = [
 let mapleader = " "
 
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>e :Explore<cr>
+nnoremap <leader>e :cd %:p:h<cr>:Dirvish<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
