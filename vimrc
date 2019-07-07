@@ -5,7 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -13,9 +12,9 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -57,9 +56,6 @@ let fortran_do_enddo=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let NERDTreeQuitOnOpen=1
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
 let g:terminal_ansi_colors = [
       \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
@@ -69,24 +65,17 @@ let g:terminal_ansi_colors = [
 " -=====================-
 let mapleader = " "
 
-nnoremap <leader>f :NERDTreeFind<cr>
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 
-nnoremap <c-u> 10k
-nnoremap <c-d> 10j
+nnoremap <c-u> <c-y>3
+nnoremap <c-d> <c-e>3
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap j gj
-nnoremap k gk
 
-vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>N
 nnoremap * *N
 nnoremap g* g*N
-vmap <leader>r *:%s//
