@@ -15,6 +15,7 @@ Plug 'mbbill/undotree'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
+Plug 'lervag/vimtex'
 call plug#end()
 
 colorscheme gruvbox
