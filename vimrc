@@ -71,6 +71,7 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
+vnoremap <leader>t :'<,'>!csvlook -I<cr>
 
 nnoremap <c-u> 3<c-y>3gk
 nnoremap <c-d> 3<c-e>3gj
