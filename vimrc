@@ -60,10 +60,13 @@ let g:terminal_ansi_colors = [
       \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
+let g:tex_flavor = 'latex'
+
 " -=====================-
 "  | Keyboard mappings |
 " -=====================-
 let mapleader = " "
+let maplocalleader = " "
 
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>e :Dirvish %:p:h<cr>
