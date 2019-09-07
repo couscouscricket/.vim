@@ -11,6 +11,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mbbill/undotree'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -53,14 +54,18 @@ let fortran_free_source=1
 let fortran_have_tabs=1
 let fortran_do_enddo=1
 
+let g:airline_theme='base16_chalk'
+
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:terminal_ansi_colors = [
       \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
 let g:tex_flavor = 'latex'
+let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 
 " -=====================-
 "  | Keyboard mappings |
@@ -74,6 +79,7 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
+nnoremap <leader>s :%s/\v
 vnoremap <leader>t :'<,'>!csvlook -I<cr>
 
 nnoremap <c-u> 3<c-y>3gk
@@ -87,3 +93,6 @@ nnoremap k gk
 
 nnoremap * *N
 nnoremap g* g*N
+
+" Disables Ex mode
+map Q <Nop>
