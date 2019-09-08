@@ -17,6 +17,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 colorscheme gruvbox
@@ -80,6 +81,7 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 nnoremap <leader>s :%s/\v
+nnoremap <leader>. @
 vnoremap <leader>t :'<,'>!csvlook -I<cr>
 
 nnoremap <c-u> 3<c-y>3gk
