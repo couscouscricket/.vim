@@ -80,8 +80,10 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
-nnoremap <leader>s :%s/\v
 nnoremap <leader>. @
+nnoremap <leader>: q:
+nnoremap <leader>/ q/
+nnoremap <leader>? q?
 vnoremap <leader>t :'<,'>!csvlook -I<cr>
 
 nnoremap <c-u> 3<c-y>3gk
