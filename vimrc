@@ -15,41 +15,28 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mbbill/undotree'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 colorscheme gruvbox
 set background=dark
 
-set undofile
-set undodir=~/.vim/undodir
-set number
-set encoding=utf8
-set relativenumber
-set scrolloff=1
-set cursorline
-set ignorecase
-set shortmess=a
-set clipboard^=unnamed
+set undofile undodir=~/.vim/undodir undolevels=100
+set number relativenumber scrolloff=1 cursorline
+set wildignorecase wildmenu wildmode=longest:full,full
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
-set showmatch
-set hlsearch incsearch
+set laststatus=2 shortmess=a
+set hlsearch incsearch ignorecase
 set gdefault
-set undolevels=100
-set wildignorecase wildmenu wildmode=longest:list,full
-set backspace=indent,eol,start
-set autoindent
-set laststatus=2
-
+set encoding=utf8
+set clipboard^=unnamed,unnamedplus
+set showmatch
+set backspace=indent,eol,start autoindent
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set autoread
-set autowrite
-
 set mouse=a
-set guioptions=
-set guifont=Menlo:h12
+set guioptions= guifont=Monaco:h14
 
 let fortran_free_source=1
 let fortran_have_tabs=1
@@ -75,8 +62,8 @@ let mapleader = " "
 let maplocalleader = " "
 
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>e :Dirvish %:p:h<cr>
-nnoremap <leader>f :Files<cr>
+nnoremap <leader>e :FZF<cr>
+nnoremap <leader>f :Ranger<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
