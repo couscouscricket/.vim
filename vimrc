@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 colorscheme gruvbox
@@ -54,6 +55,12 @@ let g:terminal_ansi_colors = [
 let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
+
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"augroup END
 
 " -=====================-
 "  | Keyboard mappings |
