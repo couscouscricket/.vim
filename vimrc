@@ -31,6 +31,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set laststatus=2 shortmess=a
 set hlsearch incsearch ignorecase
 set gdefault
+set lazyredraw
 set encoding=utf8
 set clipboard^=unnamed,unnamedplus
 set showmatch
@@ -74,7 +75,7 @@ nnoremap <leader>f :Ranger<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
-nnoremap <leader>. @
+nnoremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
