@@ -17,8 +17,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'vifm/vifm.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -71,10 +71,11 @@ let maplocalleader = " "
 
 nnoremap <leader>a :b#<cr>
 nnoremap <leader>e :FZF<cr>
-nnoremap <leader>f :Ranger<cr>
+nnoremap <leader>f :Vifm<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
+nnoremap <leader>s /
 nnoremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
