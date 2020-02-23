@@ -17,8 +17,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'vifm/vifm.vim'
+Plug 'sillybun/vim-repl'
 call plug#end()
 
 colorscheme gruvbox
@@ -56,6 +56,14 @@ let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 
+let g:repl_program = {
+            \   'default': 'zsh',
+            \   'r': 'R',
+            \   'python': 'python3',
+            \   'julia': 'julia',
+            \   }
+let g:repl_position = 3
+
 "augroup numbertoggle
 "  autocmd!
 "  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -68,19 +76,25 @@ let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 let mapleader = " "
 let maplocalleader = " "
 
-nnoremap <leader>a :b#<cr>
+" Explore-files, File-manager and Grep-inside-files
 nnoremap <leader>e :FZF<cr>
 nnoremap <leader>f :Vifm<cr>
-nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>g :Rg<cr>
-nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
+
+" Move between buffers
+nnoremap <leader>a :b#<cr>
+nnoremap <leader>b :Buffers<cr>
+
+" Search and replace shortcuts
 nnoremap <leader>s /
 nnoremap <leader>r :%s-
 vnoremap <leader>r :s-
+
 nnoremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
+nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 vnoremap <leader>t :'<,'>!csvlook -I<cr>
 
 nnoremap <c-u> 3<c-y>3gk
