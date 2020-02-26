@@ -43,6 +43,11 @@ let fortran_free_source=1
 let fortran_have_tabs=1
 let fortran_do_enddo=1
 
+let php_htmlInStrings = 1
+let php_sql_query = 1
+let g:PHP_autoformatcomment = 0
+let g:PHP_default_indenting = 1
+
 let g:airline_theme='base16_chalk'
 
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -58,7 +63,7 @@ let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 
 let g:repl_program = {
             \   'default': 'zsh',
-            \   'r': 'R',
+            \   'r': 'R --no-save',
             \   'python': 'python3',
             \   'julia': 'julia',
             \   }
