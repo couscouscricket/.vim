@@ -26,8 +26,9 @@ set background=dark
 set undofile undodir=~/.vim/undodir undolevels=100
 set number relativenumber scrolloff=1
 set cursorline
-highlight clear CursorLine
-highlight CursorLineNR term=bold ctermfg=214 ctermbg=237 guifg=#fabd2f guibg=#3c3836
+"highlight clear CursorLine
+"highlight CursorLineNR term=bold ctermfg=214 ctermbg=237 guifg=#fabd2f guibg=#262626
+set noshowmode
 set wildignorecase wildmenu wildmode=longest:full,full
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set laststatus=2 shortmess=a
