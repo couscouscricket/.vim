@@ -1,7 +1,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -51,8 +51,8 @@ let g:PHP_autoformatcomment = 0
 let g:PHP_default_indenting = 1
 
 let g:terminal_ansi_colors = [
-      \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
-      \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
+            \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
+            \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
 let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
@@ -102,6 +102,13 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>s /
 nnoremap <leader>r :%s-
 vnoremap <leader>r :s-
+
+" Quick indent
+nnoremap <leader>i ggVG=``
+
+" Quickly change between php and html filetypes
+nnoremap <leader>p :set filetype=php<cr>
+nnoremap <leader>h :set filetype=html<cr>
 
 nnoremap <leader>q @
 nnoremap <leader>: q:
