@@ -18,6 +18,7 @@ Plug 'lervag/vimtex'
 Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 call plug#end()
 
 colorscheme gruvbox
