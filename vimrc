@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
@@ -18,7 +18,6 @@ Plug 'lervag/vimtex'
 Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
-Plug 'captbaritone/better-indent-support-for-php-with-html'
 call plug#end()
 
 colorscheme gruvbox
@@ -58,6 +57,10 @@ let g:terminal_ansi_colors = [
 let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 let g:repl_program = {
             \   'default': 'zsh',
@@ -69,20 +72,25 @@ let g:repl_position = 3
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+"
+"imap <C-l> <Plug>(coc-snippets-expand)
+"
+"" Use <C-j> for select text for visual placeholder of snippet.
+"vmap <C-j> <Plug>(coc-snippets-select)
+"
+"" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+"let g:coc_snippet_next = '<c-j>'
+"
+"" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+"let g:coc_snippet_prev = '<c-k>'
+"
+"" Use <C-j> for both expand and jump (make expand higher priority.)
+"imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " -=====================-
 "  | Keyboard mappings |
