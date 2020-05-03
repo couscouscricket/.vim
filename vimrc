@@ -49,6 +49,8 @@ let php_htmlInStrings = 1
 let php_sql_query = 1
 let g:PHP_autoformatcomment = 0
 let g:PHP_default_indenting = 1
+let g:html_indent_script1 = "inc" 
+let g:html_indent_style1 = "inc" 
 
 let g:terminal_ansi_colors = [
             \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
