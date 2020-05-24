@@ -18,6 +18,7 @@ Plug 'lervag/vimtex'
 Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -69,6 +70,7 @@ let g:repl_program = {
             \   'r': 'R --no-save',
             \   'python': 'python3',
             \   'julia': 'julia',
+            \   'haskell': 'ghci'
             \   }
 let g:repl_position = 3
 
