@@ -19,6 +19,7 @@ Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 colorscheme gruvbox
