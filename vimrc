@@ -19,7 +19,6 @@ Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -78,24 +77,8 @@ let g:repl_position = 3
 let g:lightline = { 'colorscheme': 'wombat' }
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" Use <C-l> for trigger snippet expand.
-"
-"imap <C-l> <Plug>(coc-snippets-expand)
-"
-"" Use <C-j> for select text for visual placeholder of snippet.
-"vmap <C-j> <Plug>(coc-snippets-select)
-"
-"" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-j>'
-"
-"" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
-"
-"" Use <C-j> for both expand and jump (make expand higher priority.)
-"imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " -=====================-
 "  | Keyboard mappings |
@@ -116,9 +99,6 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>s /
 nnoremap <leader>r :%s-
 vnoremap <leader>r :s-
-
-" Quick indent
-nnoremap <leader>i ggVG=``
 
 " Quickly change between php and html filetypes
 nnoremap <leader>p :set filetype=php<cr>
