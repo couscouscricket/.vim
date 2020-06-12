@@ -124,5 +124,9 @@ nnoremap k gk
 nnoremap * *N
 nnoremap g* g*N
 
+" Compile and run scripts
+autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
+autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
+
 " Disables Ex mode
 map Q <Nop>
