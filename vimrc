@@ -43,7 +43,7 @@ set backspace=indent,eol,start autoindent
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set mouse=a
 set guioptions= guifont=Monaco:h14
-set wrap linebreak breakindent
+set wrap linebreak breakindent breakindentopt=shift:4
 
 let fortran_free_source=1
 let fortran_have_tabs=1
