@@ -125,8 +125,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap j gj
-nnoremap k gk
+nnoremap <c-j> gj
+nnoremap <c-k> gk
 
 nnoremap * *N
 nnoremap g* g*N
