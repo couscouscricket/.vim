@@ -21,6 +21,7 @@ Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/gnuplot.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -134,6 +135,9 @@ nnoremap g* g*N
 " Compile and run scripts
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
+autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
+autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
+autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
 
 " Disables Ex mode
 map Q <Nop>
