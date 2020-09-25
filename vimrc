@@ -5,7 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-"Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
@@ -32,7 +31,7 @@ set number relativenumber scrolloff=1
 set cursorline
 set timeout timeoutlen=3000 ttimeoutlen=10
 set noshowmode
-set wildignorecase wildmenu wildmode=longest:full,full
+set wildignorecase wildmenu wildmode=longest,list,full
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
 set laststatus=2 shortmess=a
 set hlsearch incsearch ignorecase
@@ -80,10 +79,10 @@ let g:repl_position = 3
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-let g:UltiSnipsUsePythonVersion = 2
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+"let g:UltiSnipsUsePythonVersion = 2
 
 imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-n>'
@@ -126,8 +125,6 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap <c-j> gj
-nnoremap <c-k> gk
 
 nnoremap * *N
 nnoremap g* g*N
