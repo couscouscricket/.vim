@@ -21,6 +21,9 @@ Plug 'lambdalisue/vim-manpager'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-scripts/gnuplot.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 colorscheme gruvbox
@@ -88,6 +91,8 @@ imap <tab> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-p>'
 
+let g:vim_markdown_math = 1
+
 " -=====================-
 "  | Keyboard mappings |
 " -=====================-
@@ -125,6 +130,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap <leader>w :q!<cr>
 
 nnoremap * *N
 nnoremap g* g*N
