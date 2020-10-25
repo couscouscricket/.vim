@@ -109,7 +109,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap <leader>w ZQ
+nnoremap <leader>x ZQ
 
 nnoremap * *N
 nnoremap g* g*N
