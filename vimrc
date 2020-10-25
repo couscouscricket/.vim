@@ -70,7 +70,6 @@ let g:lightline = { 'colorscheme': 'wombat' }
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
 set updatetime=300
 set signcolumn=yes
 inoremap <silent><expr> <c-space> coc#refresh()
