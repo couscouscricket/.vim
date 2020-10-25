@@ -1,29 +1,21 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
-Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'mbbill/undotree'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-surround'
+Plug 'itchyny/lightline.vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-sensible'
+
 Plug 'lervag/vimtex'
-Plug 'vifm/vifm.vim'
 Plug 'sillybun/vim-repl'
 Plug 'lambdalisue/vim-manpager'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'vim-scripts/gnuplot.vim'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-surround'
 call plug#end()
 
 colorscheme gruvbox
@@ -34,9 +26,8 @@ set number relativenumber scrolloff=1
 set cursorline
 set timeout timeoutlen=3000 ttimeoutlen=10
 set noshowmode
-set wildignorecase wildmenu wildmode=longest,list,full
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab shiftround smarttab
-set laststatus=2 shortmess=a
+set laststatus=2 shortmess=ac
 set hlsearch incsearch ignorecase
 set lazyredraw
 set encoding=utf8
@@ -52,16 +43,9 @@ let fortran_free_source=1
 let fortran_have_tabs=1
 let fortran_do_enddo=1
 
-let php_htmlInStrings = 1
-let php_sql_query = 1
-let g:PHP_autoformatcomment = 0
-let g:PHP_default_indenting = 1
-let g:html_indent_script1 = "inc" 
-let g:html_indent_style1 = "inc" 
-
 let g:terminal_ansi_colors = [
-            \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
-            \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
+      \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
+      \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
 let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
@@ -82,16 +66,16 @@ let g:repl_position = 3
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-n>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-"let g:UltiSnipsUsePythonVersion = 2
-
-imap <tab> <Plug>(coc-snippets-expand)
-let g:coc_snippet_next = '<c-n>'
-let g:coc_snippet_prev = '<c-p>'
-
-let g:vim_markdown_math = 1
+" coc sensible defaults
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set signcolumn=yes
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " -=====================-
 "  | Keyboard mappings |
@@ -99,30 +83,25 @@ let g:vim_markdown_math = 1
 let mapleader = " "
 let maplocalleader = " "
 
-" Explore-files, File-manager and Grep-inside-files
-nnoremap <leader>e :FZF<cr>
-nnoremap <leader>f :Vifm<cr>
+" Navigation between files and buffers
+map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>f :FZF<cr>
 nnoremap <leader>g :Rg<cr>
-
-" Move between buffers
-nnoremap <leader>a :b#<cr>
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>a :b#<cr>
 
 " Search and replace shortcuts
 nnoremap <leader>s /
 nnoremap <leader>r :%s-
 vnoremap <leader>r :s-
 
-" Quickly change between php and html filetypes
-nnoremap <leader>p :set filetype=php<cr>
-nnoremap <leader>h :set filetype=html<cr>
-
-nnoremap <leader>q @
+noremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
 nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
 vnoremap <leader>t :'<,'>!csvlook -I<cr>
+vnoremap <leader>t :'<,'>!csvlook -HI<cr>
 
 nnoremap <c-u> 3<c-y>3gk
 nnoremap <c-d> 3<c-e>3gj
@@ -130,7 +109,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap <leader>w :q!<cr>
+nnoremap <leader>w ZQ
 
 nnoremap * *N
 nnoremap g* g*N
