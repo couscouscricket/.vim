@@ -72,6 +72,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
+let g:coc_node_path = '/usr/local/bin/node'
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
