@@ -3,19 +3,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'vifm/vifm.vim'
 Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-sensible'
-
 Plug 'lervag/vimtex'
 Plug 'sillybun/vim-repl'
-Plug 'lambdalisue/vim-manpager'
-Plug 'godlygeek/tabular'
 call plug#end()
 
 colorscheme gruvbox
@@ -38,6 +35,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set mouse=a
 set guioptions= guifont=Monaco:h14
 set wrap linebreak breakindent breakindentopt=shift:4
+set regexpengine=0
 
 let fortran_free_source=1
 let fortran_have_tabs=1
@@ -56,7 +54,7 @@ set conceallevel=1
 let g:tex_conceal='abmg'
 
 let g:repl_program = {
-            \   'default': 'zsh',
+            \   'default': 'fish',
             \   'r': 'R --no-save',
             \   'python': 'python3',
             \   'julia': 'julia',
@@ -73,9 +71,12 @@ set nowritebackup
 set updatetime=300
 set signcolumn=yes
 let g:coc_node_path = '/usr/local/bin/node'
-inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
+autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
+autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
 
 " -=====================-
 "  | Keyboard mappings |
@@ -84,7 +85,7 @@ let mapleader = " "
 let maplocalleader = " "
 
 " Navigation between files and buffers
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>e :Vifm<cr>
 nnoremap <leader>f :FZF<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>b :Buffers<cr>
@@ -99,8 +100,8 @@ noremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
-nnoremap <leader>u :UndotreeShow<cr>:UndotreeFocus<cr>
-vnoremap <leader>t :'<,'>!csvlook -I<cr>
+nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
+vnoremap <leader>T :'<,'>!csvlook -I<cr>
 vnoremap <leader>t :'<,'>!csvlook -HI<cr>
 
 nnoremap <c-u> 3<c-y>3gk
@@ -117,9 +118,6 @@ nnoremap g* g*N
 " Compile and run scripts
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
-autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
-autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
-autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
 
 " Disables Ex mode
 map Q <Nop>
