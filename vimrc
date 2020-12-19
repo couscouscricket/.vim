@@ -13,6 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-sensible'
 Plug 'lervag/vimtex'
 Plug 'sillybun/vim-repl'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 colorscheme gruvbox
@@ -118,6 +119,7 @@ nnoremap g* g*N
 " Compile and run scripts
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
+autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -xelatex '.shellescape('%')<CR>
 
 " Disables Ex mode
 map Q <Nop>
