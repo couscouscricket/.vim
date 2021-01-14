@@ -20,7 +20,7 @@ colorscheme gruvbox
 set background=dark
 
 set undofile undodir=~/.vim/undodir undolevels=100
-set number relativenumber scrolloff=1
+set number scrolloff=1
 set cursorline
 set timeout timeoutlen=3000 ttimeoutlen=10
 set noshowmode
@@ -46,6 +46,15 @@ let g:terminal_ansi_colors = [
       \ '#fdf4c1', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#665c54',
       \ '#a89984', '#9d0006', '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
 
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 let g:tex_flavor = 'latex'
 let g:latex_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/MacOS/Skim'
@@ -78,6 +87,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
 autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
 autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
+autocmd BufRead,BufNewFile *.cls set filetype=tex
 
 " -=====================-
 "  | Keyboard mappings |
@@ -97,7 +107,6 @@ nnoremap <leader>s /
 nnoremap <leader>r :%s-
 vnoremap <leader>r :s-
 
-noremap <leader>q @
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
@@ -105,6 +114,8 @@ nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
 vnoremap <leader>T :'<,'>!csvlook -I<cr>
 vnoremap <leader>t :'<,'>!csvlook -HI<cr>
 
+nnoremap j gj
+nnoremap k gk
 nnoremap <c-u> 3<c-y>3gk
 nnoremap <c-d> 3<c-e>3gj
 nnoremap <c-j> <c-w>j
@@ -119,7 +130,8 @@ nnoremap g* g*N
 " Compile and run scripts
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
-autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -xelatex '.shellescape('%')<CR>
+autocmd filetype tex nnoremap <leader>c :w <bar> VimtexCompile<CR>
+"autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -silent -xelatex '.shellescape('%')<CR>
 
 " Disables Ex mode
 map Q <Nop>
