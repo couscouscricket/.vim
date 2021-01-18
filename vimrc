@@ -105,7 +105,7 @@ nnoremap <leader>a :b#<cr>
 " Search and replace shortcuts
 nnoremap <leader>s /
 nnoremap <leader>r :%s-
-vnoremap <leader>r :s-
+vnoremap <leader>r :s-\%V
 
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
