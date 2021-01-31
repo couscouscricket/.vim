@@ -68,7 +68,8 @@ let g:repl_program = {
             \   'r': 'R --no-save',
             \   'python': 'python3',
             \   'julia': 'julia',
-            \   'haskell': 'ghci'
+            \   'haskell': 'ghci',
+            \   'sql': 'pgcli postgres enrique'
             \   }
 let g:repl_position = 3
 
