@@ -48,6 +48,7 @@ let g:terminal_ansi_colors = [
 
 let g:vimtex_compiler_latexmk = { 
         \ 'executable' : 'latexmk',
+        \ 'continuous' : 0,
         \ 'options' : [ 
         \   '-xelatex',
         \   '-file-line-error',
@@ -90,6 +91,7 @@ autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
 autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 
+
 " -=====================-
 "  | Keyboard mappings |
 " -=====================-
@@ -98,11 +100,10 @@ let maplocalleader = " "
 
 " Navigation between files and buffers
 nnoremap <leader>e :Vifm<cr>
-nnoremap <leader>f :FZF<cr>
+nnoremap <leader>f :lcd %:p:h<bar>:FZF %:p:h<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :b#<cr>
-nnoremap <leader>cd :lcd %:p:h<cr>
 
 " Search and replace shortcuts
 nnoremap <leader>s /
@@ -112,7 +113,7 @@ vnoremap <leader>r :s-\%V
 nnoremap <leader>: q:
 nnoremap <leader>/ q/
 nnoremap <leader>? q?
-nnoremap <leader>u :UndotreeToggle<cr>:UndotreeFocus<cr>
+nnoremap <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 vnoremap <leader>T :'<,'>!csvlook -I<cr>
 vnoremap <leader>t :'<,'>!csvlook -HI<cr>
 
