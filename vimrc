@@ -102,6 +102,7 @@ nnoremap <leader>f :FZF<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>cd :lcd %:p:h<cr>
 
 " Search and replace shortcuts
 nnoremap <leader>s /
