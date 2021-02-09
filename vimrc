@@ -11,6 +11,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-sensible'
+Plug 'codota/tabnine-vim'
 Plug 'lervag/vimtex'
 Plug 'sillybun/vim-repl'
 Plug 'godlygeek/tabular'
@@ -100,7 +101,8 @@ let maplocalleader = " "
 
 " Navigation between files and buffers
 nnoremap <leader>e :Vifm<cr>
-nnoremap <leader>f :lcd %:p:h<bar>:FZF %:p:h<cr>
+nnoremap <leader>f :FZF %:p:h<cr>
+nnoremap <leader>F :FZF ~/Dropbox<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :b#<cr>
