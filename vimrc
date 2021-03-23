@@ -77,6 +77,12 @@ let g:repl_position = 3
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
+let wiki = {}
+let wiki.path = '~/Dropbox/wiki/'
+let wiki.path_html = '~/Dropbox/wiki/html/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+let g:vimwiki_list = [wiki]
+
 " coc sensible defaults
 set hidden
 set nobackup
