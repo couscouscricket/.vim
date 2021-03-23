@@ -14,6 +14,7 @@ Plug 'tpope/vim-sensible'
 Plug 'lervag/vimtex'
 Plug 'sillybun/vim-repl'
 Plug 'godlygeek/tabular'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 colorscheme gruvbox
@@ -135,6 +136,7 @@ nnoremap g* g*N
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
 autocmd filetype tex nnoremap <leader>c :w <bar> VimtexCompile<CR>
+autocmd filetype gnuplot nnoremap <leader>c :w <bar> exec '!gnuplot '.shellescape('%')<CR>
 "autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -silent -xelatex '.shellescape('%')<CR>
 
 " Disables Ex mode
