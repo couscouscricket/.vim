@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
+"Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 Plug 'vifm/vifm.vim'
 Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
@@ -14,6 +15,9 @@ Plug 'tpope/vim-sensible'
 Plug 'lervag/vimtex'
 Plug 'sillybun/vim-repl'
 Plug 'godlygeek/tabular'
+Plug 'vimwiki/vimwiki'
+Plug 'itchyny/calendar.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 colorscheme gruvbox
@@ -76,15 +80,38 @@ let g:repl_position = 3
 
 let g:lightline = { 'colorscheme': 'wombat' }
 
+let wiki = {}
+let wiki.path = '~/Dropbox/wiki/'
+let wiki.path_html = '~/Dropbox/wiki/html'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+let g:vimwiki_list = [wiki]
+
 " coc sensible defaults
 set hidden
 set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
-let g:coc_node_path = '/usr/local/bin/node'
+"let g:coc_node_path = '/usr/local/bin/node'
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Nerdtree
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
 autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
