@@ -82,7 +82,7 @@ let g:lightline = { 'colorscheme': 'wombat' }
 
 let wiki = {}
 let wiki.path = '~/Dropbox/wiki/'
-let wiki.path_html = '~/Dropbox/wiki/html'
+let wiki.path_html = '~/Dropbox/wiki/html/'
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 let g:vimwiki_list = [wiki]
 
@@ -162,6 +162,7 @@ nnoremap g* g*N
 autocmd filetype python nnoremap <leader>c :w <bar> exec '!python3 '.shellescape('%')<CR>
 autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%')<CR>
 autocmd filetype tex nnoremap <leader>c :w <bar> VimtexCompile<CR>
+autocmd filetype gnuplot nnoremap <leader>c :w <bar> exec '!gnuplot '.shellescape('%')<CR>
 "autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -silent -xelatex '.shellescape('%')<CR>
 
 " Disables Ex mode
