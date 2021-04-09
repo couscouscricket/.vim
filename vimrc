@@ -110,9 +110,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Nerdtree
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 autocmd BufRead,BufNewFile *.gp set filetype=gnuplot
 autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
 autocmd BufRead,BufNewFile *.gnuplot set filetype=gnuplot
@@ -132,6 +129,7 @@ nnoremap <leader>F :FZF ~/Dropbox<cr>
 nnoremap <leader>g :Rg<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :b#<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 " Search and replace shortcuts
 nnoremap <leader>s /
@@ -164,6 +162,8 @@ autocmd filetype julia nnoremap <leader>c :w <bar> exec '!julia '.shellescape('%
 autocmd filetype tex nnoremap <leader>c :w <bar> VimtexCompile<CR>
 autocmd filetype gnuplot nnoremap <leader>c :w <bar> exec '!gnuplot '.shellescape('%')<CR>
 "autocmd filetype tex nnoremap <leader>c :w <bar> exec '!latexmk -silent -xelatex '.shellescape('%')<CR>
+
+autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
 
 " Disables Ex mode
 map Q <Nop>
